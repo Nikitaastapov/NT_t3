@@ -186,3 +186,29 @@ rev_germ.rate_hw(st_anna, 'Java', 7)
 # print(st_anna > st_ruoy)
 # print(st_anna < st_ruoy)
 # print(lect_vasilii < st_ruoy)# разные классы
+
+students_list = [st_ruoy, st_anna]
+
+def rate_st_on_course(students_list,course):
+    aw_rate = []
+    for k in students_list:
+        if isinstance(k, Student):
+            for l in k.grades[course]:
+                aw_rate.append(l)
+    return round(sum(aw_rate)/len(aw_rate),1)
+        
+# print(rate_st_on_course(students_list, 'Python'))
+
+lecturer_list = [lect_some, lect_vasilii]
+
+def rate_lec_on_course(lecturer_list,course):
+    aw_rate = []
+    for k in lecturer_list:
+        if isinstance(k, Lecturer):
+            for l in k.grades[course]:
+                aw_rate.append(l)
+    return round(sum(aw_rate)/len(aw_rate),1)
+        
+# print(lect_some.grades)
+# print(lect_vasilii.grades)
+# print(rate_lec_on_course(lecturer_list, 'Python'))
